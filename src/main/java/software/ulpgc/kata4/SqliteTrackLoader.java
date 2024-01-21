@@ -10,6 +10,11 @@ import java.util.List;
 public class SqliteTrackLoader implements TrackLoader{
     private final Connection connection;
     private final  static  String SQL = "select * from dato where platform = \"Wii\"";
+
+    public SqliteTrackLoader(Connection connection) {
+        this.connection = connection;
+    }
+
     @Override
     public List<Track> loadAll() {
         try {
